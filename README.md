@@ -19,10 +19,10 @@ ro.config.sdha_apps_bg_min=8
 stop perfd
 echo '0' > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
 echo '80' > /proc/sys/vm/overcommit_ratio
-echo '400' > /proc/sys/vm/vfs_cache_pressure
-echo '24300' > /proc/sys/vm/extra_free_kbytes
+echo '150' > /proc/sys/vm/vfs_cache_pressure
+echo '0' > /proc/sys/vm/extra_free_kbytes
 echo '128' > /proc/sys/kernel/random/read_wakeup_threshold
-echo '256' > /proc/sys/kernel/random/write_wakeup_threshold
+echo '1024' > /proc/sys/kernel/random/write_wakeup_threshold
 echo '128' > /sys/block/mmcblk0/queue/read_ahead_kb
 echo '0' > /sys/block/mmcblk0/queue/iostats
 echo '1' > /sys/block/mmcblk0/queue/add_random
@@ -31,11 +31,12 @@ echo '0' > /sys/block/mmcblk1/queue/iostats
 echo '1' > /sys/block/mmcblk1/queue/add_random
 echo '4096' > /proc/sys/vm/min_free_kbytes
 echo '0' > /proc/sys/vm/oom_kill_allocating_task
-echo '90' > /proc/sys/vm/dirty_ratio
-echo '70' > /proc/sys/vm/dirty_background_ratio
+echo '5' > /proc/sys/vm/dirty_ratio
+echo '20' > /proc/sys/vm/dirty_background_ratio
 chmod 666 /sys/module/lowmemorykiller/parameters/minfree
 chown root /sys/module/lowmemorykiller/parameters/minfree
 echo '21816,29088,36360,43632,50904,65448' > /sys/module/lowmemorykiller/parameters/minfree
+echo '1' > /proc/sys/vm/swappiness
 rm /data/system/perfd/default_values
 start perfd
 ```
@@ -47,3 +48,19 @@ These changes are basic/fundamental changes in the behavior of Android system (A
 
 
 *NOTE: If you are using MIUI ROM please disable MIUI optimization and MIUI memory optimization because it resets most of these settings. If you use any app that tweaks settings above please uninstall or at least disable them to run and ruin the module's settings.*
+
+
+
+More info about Android/Linux memory management on Telagra.ph:
+https://telegra.ph/Telegraph-posts-by-crok-05-28
+Xiaomi Redmi Note 4X and memory management
+https://telegra.ph/Xiaomi-Redmi-Note-4X-and-memory-management-05-28
+
+
+_Quite honestly speaking I wrote this for myself only,
+publicated long time ago and.. haters, please don't ever even install it,
+I'm not advertising this module anywhere so please use other mods, hyped high AF.
+This one is not doing fine-tuning by dynamic smart scripting or anything,
+just my own oldschool settings coming from my of Android and Linux experiences..
+I tried to document everything, if you disagree with any of the settings then either
+do not install the mod or fork it and set it to your own value - freedom to do it is yours, too._
