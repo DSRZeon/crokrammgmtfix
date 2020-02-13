@@ -10,6 +10,7 @@ echo '4096' > /proc/sys/vm/min_free_kbytes
 echo '0' > /proc/sys/vm/oom_kill_allocating_task
 echo '5' > /proc/sys/vm/dirty_ratio
 echo '20' > /proc/sys/vm/dirty_background_ratio
+sleep 30
 chmod 666 /sys/module/lowmemorykiller/parameters/minfree
 chown root /sys/module/lowmemorykiller/parameters/minfree
 echo '21816,29088,36360,43632,50904,65448' > /sys/module/lowmemorykiller/parameters/minfree
