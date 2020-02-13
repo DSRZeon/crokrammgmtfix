@@ -1,5 +1,6 @@
 # Virtual memory tweaks
 stop perfd
+echo '5' > /proc/sys/vm/swappiness
 echo '0' > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
 echo '80' > /proc/sys/vm/vfs_cache_pressure
 echo '0' > /proc/sys/vm/extra_free_kbytes
@@ -12,6 +13,5 @@ echo '20' > /proc/sys/vm/dirty_background_ratio
 chmod 666 /sys/module/lowmemorykiller/parameters/minfree
 chown root /sys/module/lowmemorykiller/parameters/minfree
 echo '21816,29088,36360,43632,50904,65448' > /sys/module/lowmemorykiller/parameters/minfree
-echo '5' > /proc/sys/vm/swappiness
 rm /data/system/perfd/default_values
 start perfd
