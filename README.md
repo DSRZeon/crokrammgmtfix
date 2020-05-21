@@ -15,7 +15,7 @@ https://telegra.ph/Xiaomi-Redmi-Note-4X-and-memory-management-05-28
 ## Fine tuning an Android system
 https://telegra.ph/Fine-tuning-an-Android-system-04-20
 
-##Details
+## Details
 
 ## Virtual memory "tweaks"
 ```
